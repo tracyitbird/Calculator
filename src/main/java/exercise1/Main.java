@@ -13,6 +13,7 @@ public class Main {
     }
 
     public static String MakeFormula(){
+        System.out.println("git modify");
         StringBuilder build = new StringBuilder();
         int count = (int) (Math.random() * 2) + 1; // generate random count
         int start = 0;
@@ -92,4 +93,7 @@ public class Main {
         }
         return formula + "=" + calcStack.pop();
     }
+
+
+
 }
