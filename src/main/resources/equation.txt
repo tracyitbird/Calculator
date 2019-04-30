@@ -1,0 +1,43 @@
+import java.util.*;
+import java.io.*;
+class Equation{
+	int left=0;
+	int right=0;
+	char operator='+';
+	int value=0;
+	
+	public Equation(int m, int n, char op){
+		left = m;
+		right = n;
+		operator=op;
+		value = op == '+'?left+right:left-right;	
+	}
+	public Equation(int m, char op, int n ){
+		left = m;
+		right = n;
+		operator=op;
+		value = op == '+'?left+right:left-right;	
+	}
+	public Equation(){
+	}
+	
+	public Equation(String left_str, String right_str, char op){
+		left = Integer.parseInt(left_str);
+		right= Integer.parseInt(right_str);
+		operator = op;
+		value = op == '+'?left+right:left-right;
+	}
+	public int getLeftOperand(){return left;}
+	public int getRightOperand(){return right;}
+	public char getOperator(){return operator;}
+	public int getResult(){return value;}
+	public String toString(){
+		return ""+left+getOperator()+right;
+	}
+	public String asString(){
+		return toString()+"=";
+	}
+	public String fullString(){
+		return toString()+"="+getResult();
+	} 
+}
